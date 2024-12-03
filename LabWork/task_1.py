@@ -1,36 +1,36 @@
 class Square:
+    '''Модель квадрата'''
 
     def __init__(self, side_square):
         self.side_square = side_square
 
-    def get_square_area(self):
-        square_area = self.side_square ** 2
-        return square_area
-
-
 class Circle:
+    '''Модель окружности'''
 
-    def __init__(self, radius):
-        self.radius = radius
-        self.pi = 3.14
-
-
-    def get_area_circle(self):
-        circle_area = self.pi * (self.radius ** 2)
-        return circle_area
+    def __init__(self, diameter):
+        self.diameter = diameter
 
 
 class CircleInSquare(Square, Circle):
-    def __init__(self, side_square):
+    '''Модель окружности вписанной в квадрат'''
+
+    def __init__(self, side_square, diameter):
         Square.__init__(self, side_square)
-        radius = side_square / 2
-        Circle.__init__(self, radius)
+        Circle.__init__(self, diameter)
 
-    def get_circle_in_square(self):
-        return self.side / 2
+    def get_inscribed_circle_in_a_square(self):
+        '''Проверка вписанной окружности'''
+
+        if self.diameter == self.side_square:
+            return print("Окружность вписана")
+        else:
+            return print("Окружность не вписана")
 
 
+square_1 = Square(5)
+circle_1 = Circle(2)
 
-
+circle = CircleInSquare(square_1, circle_1)
+circle.get_inscribed_circle_in_a_square()
 
 
