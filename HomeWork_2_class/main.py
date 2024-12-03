@@ -18,6 +18,7 @@ class Teacher:
 
     def set_experience(self, experience):
         self.__experience = experience
+        return self.__experience
 
     def get_discipline(self):
         return self.__discipline
