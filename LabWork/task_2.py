@@ -6,6 +6,8 @@ class Wheels():
         self.diameter_wheels = diameter_wheels
 
     def get_information_wheels(self):
+        '''Выводит информацию о колёсах автомобиля'''
+
         return (f"Бренд колёс: {self.brand_wheels}\n"
                 f"Диаметр колёс: {self.diameter_wheels}\n")
 
@@ -18,16 +20,20 @@ class Engine():
         self.engine_power = engine_power
 
     def get_information_engine(self):
+        '''Выводит информацию о двигателе'''
+
         return (f"Модель двигателя: {self.model_engine}\n"
                 f"Мощность двигателя: {self.engine_power}\n")
 
 
 class Doors():
+    '''Модель дверей'''
 
     def __init__(self, number_of_doors):
         self.number_of_doors = number_of_doors
     
     def get_information_doors(self):
+        '''Информация о кол-ве дверей'''
         return (f"Количество дверей: {self.number_of_doors}")
 
 
@@ -43,6 +49,7 @@ class Car(Wheels, Engine, Doors):
         self.year = year
 
     def get_information_car(self):
+        '''Выводит всю информацию об автомобиле'''
         return (f"Автомобиль: {self.brand}\n"
                 f"Модель: {self.model}\n"
                 f"Год выпуска: {self.year}\n"
