@@ -96,6 +96,10 @@ class Worker(Employer):
                f"Направление: {self.direction}"
 
 
+employer = Employer('Виталий', 21, 'Среднее-Специальное')
+print(employer.get_print_infomation_employer())
+print()
+
 president = President('Vladimir Putin', 71, 'Высшее', 'President', 'Russia')
 print(president)
 print()
