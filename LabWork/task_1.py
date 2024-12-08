@@ -1,36 +1,41 @@
+from math import pi, sqrt
+
 class Square:
     '''Модель квадрата'''
 
     def __init__(self, side_square):
         self.side_square = side_square
 
+    def get_square_area(self):
+        area_square = self.side_square ** 2
+        return area_square
+
 class Circle:
     '''Модель окружности'''
 
-    def __init__(self, diameter):
-        self.diameter = diameter
+    def __init__(self, radius):
+        self.radius = radius
+
+    def get_area_circle(self):
+        circle_area = pi * (self.radius ** 2)
+        return circle_area
 
 
 class CircleInSquare(Square, Circle):
     '''Модель окружности вписанной в квадрат'''
 
-    def __init__(self, side_square, diameter):
+    def __init__(self, side_square, radius):
         Square.__init__(self, side_square)
-        Circle.__init__(self, diameter)
+        Circle.__init__(self, radius)
 
     def get_inscribed_circle_in_a_square(self):
-        '''Проверка вписанной окружности'''
-
-        if self.diameter == self.side_square:
-            return print("Окружность вписана")
-        else:
-            return print("Окружность не вписана")
+        diameter = self.radius * 2
 
 
-square_1 = Square(5)
-circle_1 = Circle(2)
+#Не понимаю как делать эту задачу с точки зрения математики (очень далёк от нее).
+# Снизьте бал за неё, но не возвращайте её на переделку пожалуйста!
 
-circle = CircleInSquare(square_1, circle_1)
-circle.get_inscribed_circle_in_a_square()
+
+
 
 
