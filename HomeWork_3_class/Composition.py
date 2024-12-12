@@ -22,6 +22,7 @@ access_memory = AccessMemory('16 ГБ', '3200 МГц')
 ssd = SsdDrive('512 ГБ')
 videocard = VideoCard('GeForce RTX 3060', '12 ГБ')
 
+
 pc = PComputer(power, motherboard, processor, access_memory, ssd, videocard)
 
 print(pc.power_unit)
