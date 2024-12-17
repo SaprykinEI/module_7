@@ -21,7 +21,6 @@ class Teacher:
     def set_experience(self, experience):
         self.__experience = experience
 
-
     def get_discipline(self):
         return self.__discipline
 
@@ -52,9 +51,7 @@ class DisciplineTeacher(Teacher):
     def __init__(self, name, education, experience, discipline, job_title):
         super().__init__(name, education, experience, discipline)
         self.__job_title = job_title
-        DisciplineTeacher.discipline_teacher_dict[name] = [education,
-                                             experience,
-                                             discipline, self.__job_title]
+        DisciplineTeacher.discipline_teacher_dict[name] = [education, experience, discipline, self.__job_title]
 
     def get_discipline(self):
         return super().get_discipline()
@@ -69,7 +66,6 @@ class DisciplineTeacher(Teacher):
         data = super().get_teacher_data()
         return f"{data},\nПредмет {Teacher.get_discipline(self)}, должность {self.__job_title}\n"
 
-
     def add_mark(self, student_name, estimation):
         data = super().add_mark(student_name, estimation)
         return f"{data}.\nПредмет {self.get_discipline()}\n"
@@ -83,27 +79,3 @@ class DisciplineTeacher(Teacher):
         super().give_a_consultation(student_class)
         return (f"{self.get_teacher_name()} провел консультацию в классе {student_class}.\n"
                 f"По предмету {self.get_discipline()} как {self.__job_title}\n")
-
-
-
-teach = Teacher('Иван Петров', 'БГПУ', 4, None)
-print(teach.get_teacher_data())
-print(teach.add_mark('Петр Сидоров', 4))
-print(teach.remove_mark('Дмитрий Степанов', 3))
-print(teach.give_a_consultation('9Б'))
-teach.set_experience(5)
-print(teach.get_teacher_data())
-print(teach.fire_teacher())
-print(teach.fire_teacher())
-print()
-
-
-director = DisciplineTeacher("Иван Петров", "БГПУ", 4, "Химия", "Директор")
-print(director.get_teacher_data())
-print(director.add_mark("Николай Иванов", 4))
-print(director.remove_mark("Дмитрий Сидоров", 3))
-print(director.give_a_consultation("10 Б"))
-print()
-director.set_job_title("Учитель")
-print(director.get_teacher_data())
-print(director.give_a_consultation("10 Б"))
