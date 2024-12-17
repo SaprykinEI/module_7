@@ -39,7 +39,6 @@ class Teacher:
 
     def fire_teacher(self):
         if self.__name in Teacher.teacher_dict:
-
             Teacher.teacher_dict.pop(self.__name)
             return f"Сотрудник {self.__name} был уволен"
         else:

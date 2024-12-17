@@ -38,6 +38,13 @@ class Teacher:
     def give_a_consultation(self, student_class):
         return f"{self.get_teacher_name()} провел консультацию в классе {student_class}"
 
+    def fire_teacher(self):
+        if self.__name in Teacher.teacher_dict:
+            Teacher.teacher_dict.pop(self.__name)
+            return f"Сотрудник {self.__name} был уволен"
+        else:
+            return f"Сотрудника {self.__name} уже уволили"
+
 
 class DisciplineTeacher(Teacher):
     "Модель Преподавателя по предмету"
@@ -61,7 +68,6 @@ class DisciplineTeacher(Teacher):
 
     def set_job_title(self, job_title):
         self.__job_title = job_title
-        return self.__job_title
 
     def get_teacher_data(self):
         data = super().get_teacher_data()
@@ -83,12 +89,7 @@ class DisciplineTeacher(Teacher):
                 f"По предмету {self.get_discipline()} как {self.__job_title}\n")
 
 
-    def fire_teacher(self):
-        if self.__name in Teacher.teacher_dict:
-            Teacher.teacher_dict.pop(self.__name)
-            return f"Сотрудник {self.__name} был уволен"
-        else:
-            return f"Сотрудника {self.__name} уже уволили"
+
 
 
 
