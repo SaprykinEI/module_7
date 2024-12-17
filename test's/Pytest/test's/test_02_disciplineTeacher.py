@@ -25,12 +25,12 @@ def test_05_get_teacher_data(discipline_teacher_fixture):
 
 
 def test_06_add_mark(discipline_teacher_fixture):
-    assert discipline_teacher_fixture.add_mark("Николай Иванов", "4") == ('Иван Петров поставил оценку 4 студенту Николай Иванов.\n'
+    assert discipline_teacher_fixture.add_mark("Николай Иванов", 4) == ('Иван Петров поставил оценку 4 студенту Николай Иванов.\n'
                                                                           'Предмет Химия\n')
 
 
 def test_07_remove_mark(discipline_teacher_fixture):
-    assert discipline_teacher_fixture.remove_mark("Дмитрий Сидоров", "3") == 'Иван Петров, удалил оценку 3 студенту Дмитрий Сидоров.\nПредмет Химия\n'
+    assert discipline_teacher_fixture.remove_mark("Дмитрий Сидоров", 3) == 'Иван Петров, удалил оценку 3 студенту Дмитрий Сидоров.\nПредмет Химия\n'
 
 
 def test_08_give_a_consultation(discipline_teacher_fixture):
