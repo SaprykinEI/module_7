@@ -2,6 +2,7 @@ class Teacher:
     '''Модель преподавателя'''
     teacher_dict = {}
 
+
     def __init__(self, name, education, experience, discipline):
         self.__name = name
         self.__education = education
